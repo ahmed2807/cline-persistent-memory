@@ -1,0 +1,38 @@
+# ==========================================================================
+# .gitignore - cline-persistent-memory
+#
+# Ce fichier protège contre l'ajout accidentel de secrets ou de fichiers
+# temporaires dans le système de mémoire persistante.
+#
+# Lorsque ce système est copié dans un projet métier, ce .gitignore
+# doit être FUSIONNÉ avec le .gitignore existant du projet, pas remplacé.
+# ==========================================================================
+
+# Secrets et credentials - ne doivent JAMAIS être versionnés
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials.*
+*_token
+*token.json
+
+# Fichiers de travail temporaires de Cline (non destinés à être partagés)
+.clinerules/.tmp/
+.clinerules/*.local.md
+.clinerules/**/*.draft.md
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Logs d'audit locaux (optionnels, non versionnés par défaut)
+.clinerules/audit-logs/
